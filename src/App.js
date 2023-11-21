@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from 'jwt-decode';
 import './App.css';
 
 function App() {
+  const handleLoginSuccess = (credentialResponse) => {
+    const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
+
+    localStorage.setItem('credentials', JSON.stringify(credentialResponseDecoded));
+    
+  };
+
+  const handleLoginError = () => {
+    console.log('Login Failed');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <GoogleLogin onSuccess={handleLoginSuccess} onError={handleLoginError} />
     </div>
   );
 }

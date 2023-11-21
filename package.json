@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@ericz1803/react-google-calendar": "^4.3.1",
+    "@react-oauth/google": "^0.11.1",
+    "@syncfusion/ej2-calendars": "^23.1.41",
+    "@syncfusion/ej2-react-schedule": "^23.1.44",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "syncfunction": "^1.2.35",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
